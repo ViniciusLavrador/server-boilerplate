@@ -14,8 +14,7 @@ const config =  {
     server: {
         hostname: process.env.NODE_ENV == 'development' ? 
             'localhost' : process.env.hostname,
-        port: process.env.NODE_ENV == 'development' ?
-            3000 : parseInt(process.env.PORT),
+        port: process.env.PORT || 3000, 
         ssl: !!+process.env.SSL_ENABLED || false,
     },
     log: {
