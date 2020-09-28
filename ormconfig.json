@@ -1,0 +1,19 @@
+{
+    "type": "postgres",
+    "host": "trial-postgres-db1.c1h4wjgk2iz0.sa-east-1.rds.amazonaws.com",
+    "port": 5432, 
+    "username": "postgres",
+    "password": "postgresql",
+    "database": "trial",
+    "synchronize" : true,
+    "logging" : false,
+    "entities": [
+        "src/database/models/**/*.ts"
+    ],
+    "migrations": [
+        "src/database/migrations/**/*.ts"
+    ],
+    "subscribers": [
+        "src/database/subscribers/**/*.ts"
+    ]
+}
