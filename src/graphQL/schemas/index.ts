@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import {merge} from 'lodash';
 import {makeExecutableSchema} from 'graphql-tools';
 import {GraphQLScalarType, Kind} from 'graphql';
 
@@ -48,7 +49,7 @@ fs.readdirSync(__dirname)
     .filter(dir => (dir.indexOf('.') < 0))
     .forEach(dir => {
         const tmp = require(path.join(__dirname, dir)).default;
-        resolvers = {...resolvers, ...tmp.resolvers};
+        resolvers = merge(resolvers, tmp.resolvers);
         typeDefs.push(tmp.types);
     });
 
